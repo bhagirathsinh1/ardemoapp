@@ -1,0 +1,22 @@
+{
+    "sourceFile": "android/app/build.gradle",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1643692804849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643693091198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,10 +50,13 @@\n         release {\n             // TODO: Add your own signing config for the release build.\n             // Signing with the debug keys for now, so `flutter run --release` works.\n             signingConfig signingConfigs.debug\n-                        useProguard false\n+useProguard true\n \n+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' \n+\n+       \n         }\n     }\n }\n \n"
+                }
+            ],
+            "date": 1643692804849,
+            "name": "Commit-0",
+            "content": "def localProperties = new Properties()\ndef localPropertiesFile = rootProject.file('local.properties')\nif (localPropertiesFile.exists()) {\n    localPropertiesFile.withReader('UTF-8') { reader ->\n        localProperties.load(reader)\n    }\n}\n\ndef flutterRoot = localProperties.getProperty('flutter.sdk')\nif (flutterRoot == null) {\n    throw new GradleException(\"Flutter SDK not found. Define location with flutter.sdk in the local.properties file.\")\n}\n\ndef flutterVersionCode = localProperties.getProperty('flutter.versionCode')\nif (flutterVersionCode == null) {\n    flutterVersionCode = '1'\n}\n\ndef flutterVersionName = localProperties.getProperty('flutter.versionName')\nif (flutterVersionName == null) {\n    flutterVersionName = '1.0'\n}\n\napply plugin: 'com.android.application'\napply from: \"$flutterRoot/packages/flutter_tools/gradle/flutter.gradle\"\n\nandroid {\n    compileSdkVersion 28\n\n    lintOptions {\n        disable 'InvalidPackage'\n    }\n\n    compileOptions {\n        sourceCompatibility 1.8\n        targetCompatibility 1.8\n    }\n\n    defaultConfig {\n        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).\n        applicationId \"com.example.flutter_ar\"\n        minSdkVersion 24\n        targetSdkVersion 28\n        versionCode flutterVersionCode.toInteger()\n        versionName flutterVersionName\n        testInstrumentationRunner \"android.support.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        release {\n            // TODO: Add your own signing config for the release build.\n            // Signing with the debug keys for now, so `flutter run --release` works.\n            signingConfig signingConfigs.debug\n                        useProguard false\n\n        }\n    }\n}\n\nflutter {\n    source '../..'\n}\n\ndependencies {\n    testImplementation 'junit:junit:4.12'\n    androidTestImplementation 'com.android.support.test:runner:1.0.2'\n    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'\n    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.8.0'\n\n    // Alternatively, use ArSceneView without the UX dependency.\n    implementation 'com.google.ar.sceneform:core:1.8.0'\n    implementation 'com.google.ar:core:1.8.0'\n}\n"
+        }
+    ]
+}
