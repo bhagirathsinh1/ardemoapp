@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1643694502409,
@@ -12,6 +12,10 @@
                 {
                     "date": 1643694547918,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,8 @@\n   }\n }\n \n class MyHomePage extends StatefulWidget {\n-  MyHomePage({Key key, this.title}) : super(key: key);\n-  final String title;\n-\n   @override\n   _MyHomePageState createState() => _MyHomePageState();\n }\n \n@@ -91,9 +88,9 @@\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n       appBar: AppBar(\n-        title: Text(widget.title),\n+        title: Text('Flutter AR'),\n       ),\n       body: ArCoreView(\n         onArCoreViewCreated: _onArCoreViewCreated,\n       ),\n"
+                },
+                {
+                    "date": 1643695232598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n class MyApp extends StatelessWidget {\n   @override\n   Widget build(BuildContext context) {\n     return MaterialApp(\n-      title: 'Flutter AR',\n+      title: 'ARDemo App',\n       theme: ThemeData(\n         primarySwatch: Colors.blue,\n       ),\n       home: MyHomePage(),\n"
                 }
             ],
             "date": 1643694502409,
